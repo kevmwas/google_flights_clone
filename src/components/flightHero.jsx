@@ -1,42 +1,48 @@
-import React from 'react';
-import { Box, Typography, TextField, Button, Grid, IconButton, InputAdornment } from '@mui/material';
+import { Box, Typography, TextField, Button, Grid, IconButton, InputAdornment, useTheme, useMediaQuery } from '@mui/material';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import SwapVertIcon from '@mui/icons-material/SwapVert';
 import SearchIcon from '@mui/icons-material/Search';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import heroImageUrl from "../assets/flights.svg"
+import RoundedTabs from './roundedTabs';
+import RoundedTab from './roundedTab';
+import HeroImage from './heroImage';
 
-function FlightsHeroSection() {
+const FlightsHeroSection = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Box
       sx={{
-        pt: 4,
+        mt: 10,
         pb: 6,
         px: 2,
-        bgcolor: '#e0f2f7', maxWidth: 800
       }}
     >
+      <HeroImage imageUrl={heroImageUrl} />
       <Typography variant="h4" align="center" gutterBottom>
-        Find Your Perfect Flight
+        Search Flights
       </Typography>
       <Box
         sx={{
-          maxWidth: 800,
+          maxWidth: 700,
           mx: 'auto',
-          p: 3,
+          p: 2,
           bgcolor: 'white',
-          borderRadius: 1,
+          borderRadius: theme.shape.borderRadius,
           boxShadow: 1,
         }}
       >
+        <RoundedTabs value={0} aria-label="flight type">
+          <RoundedTab label="One way" />
+          <RoundedTab label="Round trip" />
+          <RoundedTab label="Multi-city" />
+        </RoundedTabs>
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={5}>
             <TextField
               fullWidth
               label="Origin"
@@ -50,12 +56,12 @@ function FlightsHeroSection() {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={1} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Grid item xs={12} md={2} sx={{ display: 'flex', justifyContent: 'center' }}>
             <IconButton aria-label="swap origin and destination">
               <SwapVertIcon />
             </IconButton>
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={5}>
             <TextField
               fullWidth
               label="Destination"
@@ -69,10 +75,10 @@ function FlightsHeroSection() {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={6}>
             <TextField
               fullWidth
-              label="Dates"
+              label="Departure date"
               variant="outlined"
               InputProps={{
                 startAdornment: (
@@ -83,7 +89,21 @@ function FlightsHeroSection() {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={2}>
+          <Grid item xs={12} md={6}>
+            <TextField
+              fullWidth
+              label="Return date"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <CalendarTodayIcon color="action" />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
             <TextField
               fullWidth
               label="Passengers"
@@ -97,7 +117,7 @@ function FlightsHeroSection() {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={2} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button variant="contained" color="primary" size="large" startIcon={<SearchIcon />}>
               Search
             </Button>

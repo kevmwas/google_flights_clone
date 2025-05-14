@@ -1,4 +1,4 @@
-import FlightsHeroSection from "./components/hero";
+import FlightsHeroSection from "./components/flightHero";
 import Layout from "./layout/layout";
 
 export default function App() {

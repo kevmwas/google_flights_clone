@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography, IconButton, Box, useTheme, useMediaQuery } from '@mui/material';
 import { Menu, FlightTakeoff, PersonOutline, Explore, Luggage, KingBed, House, DarkMode, Apps }  from '@mui/icons-material';
-import RoundedNavigationButton from '../components/roundedNavigationButton';
+import RoundedNavigationButton from '../roundedNavigationButton';
 
 const Header = () => {
   const theme = useTheme();

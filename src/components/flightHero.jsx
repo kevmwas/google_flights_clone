@@ -28,7 +28,6 @@ const FlightsHeroSection = () => {
       </Typography>
       <Box
         sx={{
-          maxWidth: 700,
           mx: 'auto',
           p: 2,
           bgcolor: 'white',
@@ -41,7 +40,7 @@ const FlightsHeroSection = () => {
           <RoundedTab label="Round trip" />
           <RoundedTab label="Multi-city" />
         </RoundedTabs>
-        <Grid container spacing={2} alignItems="center">
+        <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={5}>
             <TextField
               fullWidth
@@ -98,20 +97,6 @@ const FlightsHeroSection = () => {
                 startAdornment: (
                   <InputAdornment position="start">
                     <CalendarTodayIcon color="action" />
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField
-              fullWidth
-              label="Passengers"
-              variant="outlined"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <PersonOutlineIcon color="action" />
                   </InputAdornment>
                 ),
               }}

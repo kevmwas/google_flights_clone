@@ -1,10 +1,7 @@
-import FlightsHeroSection from "./components/flightHero";
-import Layout from "./layout/layout";
+import Pages from "./pages";
 
 export default function App() {
   return (
-    <Layout>
-      <FlightsHeroSection />
-    </Layout>
+    <Pages />
   );
 }

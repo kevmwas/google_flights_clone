@@ -1,12 +1,11 @@
-# React + Vite
+This is my try to clone the google flights page. It took me roughly 10 hours working on it but i was hitting the 4 day limit.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To run the app please install the packages
 
-Currently, two official plugins are available:
+```npm i```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Then run the app using the below commands
 
-## Expanding the ESLint configuration
+```npm run dev```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The app is bundled using the latest react and vite. The app also utilises material UI and redux for state management
